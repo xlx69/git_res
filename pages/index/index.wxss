@@ -1,0 +1,26 @@
+page {
+  background-color: #f0f0f4;
+}
+.index{
+  text-align: center;
+  font-weight: bold;
+}
+
+.search_content .search_item {
+  border-radius:8px;
+  background-color: #fff;
+  font-size: 40rpx;
+  margin-top: 20rpx;
+  display: flex;
+  border:1rpx solid #f0fcff;
+  padding: 10rpx;
+}
+.search_item2{
+  width: 23.3333333%;
+}
+.search_item3{
+  width: 45.3333333%;
+}
+.search_item4{
+  width: 31.3333333%;
+}

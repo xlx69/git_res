@@ -1,0 +1,15 @@
+<!-- //搜索个人当前周期的页面 -->
+<view class="search_row">
+  <input class="search_input"  placeholder="请输入姓名" type="text" bindinput="handleInput"></input>
+  <button class="search_button" bindinput="handleInput">查询</button>
+</view>
+<view class="search_content">
+  <view class="search_item1">姓名：{{name}}</view>
+  <view class="search_item2">分数：{{score}}</view>
+  <view class="search_item3">评分人：{{bename}}</view>
+</view>
+<view>
+  <navigator url="../pingfen/pingfen">
+    <button class="search_nav" bindtap="tiaozhuan" wx:if="{{grade > 0}}">重评分</button>
+  </navigator>
+</view>

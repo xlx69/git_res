@@ -1,0 +1,72 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/my/my",
+          "pathName": "pages/my/my",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/regist/regist",
+          "pathName": "pages/regist/regist",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/infor/infor",
+          "pathName": "pages/infor/infor",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/pingfen/pingfen",
+          "pathName": "pages/pingfen/pingfen",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/detail/detail",
+          "pathName": "pages/detail/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/search2/search",
+          "pathName": "pages/search2/search",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/pingfen/pingfen",
+          "pathName": "pages/pingfen/pingfen",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/upGrade/upGrade",
+          "pathName": "pages/upGrade/upGrade",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

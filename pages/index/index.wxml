@@ -1,0 +1,8 @@
+<view class="index">当前周期评分排名</view>
+<view class="search_content" >
+  <view class="search_item" style="white-space: nowrap" wx:for="{{userinfo}}" wx:for-index="bindex" data-index='{{bindex}}' wx:key="{{id}}" bindtap="detail">
+    <view  class="search_item2" >{{bindex+1}}.</view>
+    <view  class="search_item3" >{{item.username}}</view>
+    <view  class="search_item4" >{{item.score}}分</view>
+  </view>
+</view>

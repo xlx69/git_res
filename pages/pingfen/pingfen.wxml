@@ -1,0 +1,21 @@
+<view wx:if="{{grade != 0 }}">
+  <view>
+    <view class="score_name">
+      <text >您将对-{{username}}-进行评分！</text>
+    </view>
+  </view>
+
+  <view class="registform">
+    <form bindsubmit="mysubmit">
+      <view class="search_row">
+        <input class="regist_input" placeholder="请输入分数（0 ~ 100）" type="text" name="score"></input>
+      </view>
+      <view>
+        <button class="regist_button" form-type="submit">提交</button>
+      </view>
+    </form>
+  </view>
+</view>
+<view>
+  <view wx:if="{{grade == 0}}">对不起，您没有资格评分，请和管理员联系</view>
+</view>

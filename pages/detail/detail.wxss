@@ -1,0 +1,41 @@
+page {
+  background-color: #f0f0f4;
+}
+.detail-text{
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
+  font-weight: bold;
+}
+.detail_conten.detail_item{
+  border-radius:8px;
+  background-color: #fff;
+  font-size: 40rpx;
+  margin-top: 20rpx;
+  display: flex;
+  border:1rpx solid #f0fcff;
+  padding: 10rpx;
+}
+.detail_item {
+  border-radius:5px;
+  border:1rpx solid #f0fcff;
+  background-color: #fff;
+  font-size: 40rpx;
+  margin-top: 20rpx;
+  display: flex;
+}
+.rescore{
+  margin-top: 30rpx;
+  border-radius:5px;
+  border:1rpx solid #f0fcff;
+  background-color: #fff;
+}
+.detail_item1{
+  width: 40%;
+  }
+.detail_item2{
+width:40%;
+}
+.detail_item3{
+  width: 20%;
+}

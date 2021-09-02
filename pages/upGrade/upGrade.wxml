@@ -1,0 +1,13 @@
+<view class="up_gradeForm">
+    <form bindsubmit="up_grade">
+      <view class="search_row">
+        <input class="regist_input" placeholder="请输入管理员密码" type="text" name="mast"></input>
+      </view>
+      <view class="search_row">
+        <input class="regist_input" placeholder="请输入对应权限密码" type="text" name="grade"></input>
+      </view>
+      <view>
+        <button class="regist_button" form-type="submit" >提交</button>
+      </view>
+    </form>
+  </view>

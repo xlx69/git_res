@@ -1,0 +1,15 @@
+<view >
+  <view  class="detail-text">
+    <text >{{username}}的评分详情</text>
+  </view>
+  <view class="detail_conten">
+    <view class="detail_item" wx:for="{{userinfo}}" wx:for-index="bindex" data-index='{{bindex}}' wx:key="{{id}}" bindtap="pingfen">
+        <view class="detail_item1" >评委：{{item.username}}</view>
+        <view class="detail_item2" >{{item.score}}分</view>
+        <view class="detail_item3" >第{{item.cycle}}周期</view> 
+    </view>
+  </view>
+  <navigator  url="../pingfen/pingfen">
+    <button class="rescore" bindtap="tiaozhuan" wx:if="{{grade > 0}}">重评分</button>
+  </navigator>
+</view>

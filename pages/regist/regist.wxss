@@ -1,0 +1,26 @@
+page{
+  padding: 5rpx; 
+  box-sizing: border-box;
+}
+.registform{
+  background-color:white;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+.search_row{
+  height: 120rpx;
+}
+.registinput{
+  border: 5rpx solid black;
+  border-radius:5px;
+  height: 100rpx;
+  margin-top: 50rpx;
+}
+.regist_button{
+  margin-top: 50rpx;
+  columns: #000000;
+}
+.head{
+  text-align: center;
+  font-weight: bold;
+}

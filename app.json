@@ -1,0 +1,46 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/search2/search",
+    "pages/my/my",
+    "pages/regist/regist",
+    "pages/pingfen/pingfen",
+    "pages/detail/detail",
+    "pages/logs/logs",
+    "pages/upGrade/upGrade"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小评分系统",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icon/_home.png",
+        "selectedIconPath": "icon/home.png"
+      },
+      {
+        "pagePath": "pages/search2/search",
+        "text": "搜索排名",
+        "iconPath": "icon/_search.png",
+        "selectedIconPath": "icon/search.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "个人中心",
+        "iconPath": "icon/_my.png",
+        "selectedIconPath": "icon/my.png"
+      }
+    ],
+    "color": "#FFFFFF",
+    "selectedColor": "#44cef6",
+    "backgroundColor":"#FFFFFF"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

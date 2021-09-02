@@ -1,0 +1,26 @@
+<view class="header">
+  <button class="anniu" wx:if="{{!userInfo}}" bindtap="login" >请登录</button>
+  <view wx:else class="root">
+    <image class="touxiang" src="{{userInfo.avatarUrl}}"></image>
+    <text class="necheng">{{userInfo.nickName}}</text>
+    <button class="anniu2" bindtap="loginOut">退出登录</button>
+  </view>
+</view>
+<view wx:if="{{userInfo}}">
+  <view class="item" bindtap="grade">
+    <text >我的等级</text>
+    <text class="right_arrow" ></text>
+  </view>
+  <view class="item" bindtap="score">
+    <text >我的分数</text>
+    <text  class="right_arrow"></text>
+  </view>
+  <view class="item"> 
+    <navigator url="../upGrade/upGrade">升级权限</navigator>
+    <navigator url="../upGrade/upGrade" class="right_arrow"></navigator>
+  </view>
+  <view class="item"> 
+    <navigator url="../regist/regist">个人信息补充</navigator>
+    <navigator url="../regist/regist" class="right_arrow"></navigator>
+  </view>
+</view>
