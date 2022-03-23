@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "mp-form": "weui-miniprogram/form/form",
+    "mp-slideview": "weui-miniprogram/slideview/slideview",
+    "mp-icon": "weui-miniprogram/icon/icon",
+    "mp-checkbox-group": "weui-miniprogram/checkbox-group/checkbox-group",
+    "mp-checkbox": "weui-miniprogram/checkbox/checkbox",
+    "mp-cells": "weui-miniprogram/cells/cells",
+    "pickerYMDHM": "/component/pickerYMDHM/pickerYMDHM"
+  },
+  "navigationBarTitleText": "详情"
+}

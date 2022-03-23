@@ -1,0 +1,5 @@
+<!--展示的每个主题需要对其评分的所有人-->
+<view wx:for="{{userList}}" wx:for-index="bindex" data-index='{{bindex}}' wx:key="{{id}}" bindtap="toScore" class="item">
+  <view class="text">{{item.username}}</view>
+  <view class="tubiao"><image src="/icon/jiantou_1.png" class="icon"></image></view>
+</view>

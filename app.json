@@ -1,19 +1,27 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/release/release",
     "pages/search2/search",
     "pages/my/my",
     "pages/regist/regist",
     "pages/pingfen/pingfen",
-    "pages/detail/detail",
     "pages/logs/logs",
-    "pages/upGrade/upGrade"
+    "pages/upGrade/upGrade",
+    "pages/pulldown/pulldown",
+    "pages/see/see1/see1",
+    "pages/see/detail/detail",
+    "pages/score/score1/score1",
+    "pages/scoreuserlist/scoreuserlist",
+    "pages/see/bescoreDetail/bescoreDetail",
+    "pages/addUser/addUser",
+    "pages/template/template"
   ],
   "window":{
     "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "小评分系统",
-    "navigationBarTextStyle":"white",
+    "navigationBarTextStyle":"black",
     "enablePullDownRefresh":true
   },
   "tabBar": {
@@ -25,22 +33,23 @@
         "selectedIconPath": "icon/home.png"
       },
       {
-        "pagePath": "pages/search2/search",
-        "text": "搜索排名",
-        "iconPath": "icon/_search.png",
-        "selectedIconPath": "icon/search.png"
-      },
-      {
         "pagePath": "pages/my/my",
         "text": "个人中心",
         "iconPath": "icon/_my.png",
         "selectedIconPath": "icon/my.png"
       }
     ],
-    "color": "#FFFFFF",
-    "selectedColor": "#44cef6",
+    "color": "#000000",
+    "selectedColor": "#33333",
     "backgroundColor":"#FFFFFF"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  },
+  "usingComponents": {
+    "mp-searchbar": "weui-miniprogram/searchbar/searchbar"
+  }
 }
+

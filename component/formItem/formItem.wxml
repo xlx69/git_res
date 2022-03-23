@@ -1,0 +1,16 @@
+<!-- <slot name="before"></slot> -->
+<view class="form-item" >
+	<view class="contentjusty">{{title}}</view>
+	<view style="width:80%;" >
+		<input bindinput="_serach" value="{{value}}" class="input" placeholder="请输入查询姓名" />
+	</view>
+	<!-- 下拉选择历史记录 -->
+	<view class="searchview" wx:if="{{arry.length>0}}">
+		<scroll-view style="height:190px;" scroll-y>
+			<view wx:for="{{arry}}" wx:key="index" class="searchviewitem" bindtap="_click" data-index="{{index}}">
+				<view>{{item}}</view>
+			</view>
+		</scroll-view>
+	</view>
+	<!-- 下拉选择历史记录 -->
+</view>

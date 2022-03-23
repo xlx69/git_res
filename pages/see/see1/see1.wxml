@@ -1,0 +1,22 @@
+<!--点击时候展示该主题所有被评分人，和已经被评了多少分，再点击评分人查看详细打了多少分-->
+<!--点击后如果权限不够应该不可以继续往后查看了-->
+<mp-searchbar id="searchbar" bindselectresult="selectResult" search="{{search}}" value="{{inputVal}}"></mp-searchbar>
+<view class="abab">
+  <view wx:for="{{themeinfo}}" wx:for-index="bindex" data-index='{{bindex}}' wx:key="{{id}}" bindtap="detail" >
+    <view class="see_theme2">
+      <view>
+        <view class="see_theme2_item1" wx:if="{{((bindex+1) == 1)}}"><image src="/icon/guanjun.png" class="paiming"></image></view>
+        <view class="see_theme2_item1" wx:if="{{((bindex+1) == 2)}}"><image src="/icon/yajun.png" class="paiming"></image></view>
+        <view class="see_theme2_item1" wx:if="{{((bindex+1) == 3)}}"><image src="/icon/jijun.png" class="paiming"></image></view>
+        <view class="see_theme2_item1-1" wx:if="{{((bindex+1) > 3)}}">{{bindex+1}}</view>
+      </view>
+      <!-- <view class="see_theme2_item2">{{item.username}}</view> -->
+      <view class="see_theme2_item2" wx:if="{{((bindex+1) <= 3)}}">{{item.score}}</view>
+      <view class="see_theme2_item2-1" wx:if="{{((bindex+1) > 3)}}">{{item.score}}</view>
+      <view class="see_theme2_item3" >{{item.username}}</view>
+      <view wx:if="{{check_btn.check_btn == 'True'}}" class="see_theme2_item4">({{item.evaluate}})</view>
+      <!-- <view class="see_theme2_item2-1"  wx:if="{{((bindex+1) > 3)}}">{{item.username}}</view> -->
+      <text class="right_arrow" ></text>
+    </view>
+  </view>
+</view>

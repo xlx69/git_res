@@ -1,26 +1,102 @@
-page{
-  padding: 5rpx; 
-  box-sizing: border-box;
+page {
+  height: 100%;
+  background: rgb(237, 237, 237);
 }
-.registform{
-  background-color:white;
+
+/* 整块页面 */
+.registform {
+  background-color: #ededed;
   padding-left: 20rpx;
   padding-right: 20rpx;
 }
-.search_row{
-  height: 120rpx;
+
+/* 输入栏盒子大小 */
+.search_row {
+  height: 110rpx;
+  display: flex;
 }
-.registinput{
-  border: 5rpx solid black;
-  border-radius:5px;
-  height: 100rpx;
+
+.form {
+  background-color: #ffffff;
+  width: 100%;
+  border-radius: 20rpx;
+}
+.registinput {
+  border: 2rpx solid #ffffff;
+  /* border-radius:5px; */
+  height: 110rpx;
+  border: black;
+}
+.regist_button {
   margin-top: 50rpx;
+  background-color: #06c05f;
+  color: white;
 }
-.regist_button{
-  margin-top: 50rpx;
-  columns: #000000;
+
+input {
+  padding-left: 40px;
 }
-.head{
+.icon {
+  width: 70rpx;
+  height: 70rpx;
+  vertical-align: middle;
+  margin-top: 25rpx;
+  margin-left: 25rpx;
+}
+.image {
+  width: 200rpx;
+  height: 100%;
+}
+.tui-picker-content {
+  padding: 50rpx;
   text-align: center;
+}
+.tui-picker-name {
+  height: 110rpx;
+  line-height: 80rpx;
+}
+.tui-picker-detail {
+  height: 100%;
+  line-height: 90rpx;
+  width: 300rpx;
+  font-size: 16px;
+  padding-top: 20rpx;
+  overflow: hidden;
+  margin-left: 42px;
+  margin-top: 0rpx;
+  padding-left: 0rpx;
+}
+.bt {
+  color: rgb(7, 193, 96);
+  font-size: smaller;
   font-weight: bold;
+  margin: 20rpx;
+}
+.right_arrow {
+  margin-top: 46rpx;
+
+  border: solid #16d46b;
+  border-width: 0 2px 2px 0;
+  padding: 3px;
+  position: absolute;
+  right: 46px;
+  top: 46px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.line {
+  width: 100%;
+  margin-top: 10rpx;
+  border-top: 1px #ededed solid;
+}
+.pick {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.more {
+  height: 100%;
+  line-height: 98rpx;
+  width: 100%;
+  padding-left: 80rpx;
 }

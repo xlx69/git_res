@@ -1,0 +1,181 @@
+<!--pages/template/template.wxml-->
+<view class="select_template">选择模板</view>
+<view class="contain">
+  <view class="picker_1">
+    <view class="weui-cell">
+      <text class="weui-cell__hd"> 请选择评分对象： </text>
+      <view class="weui-cell__bd">
+        <picker bindchange="changeuserTeam" value="{{checkTeam}}" range="{{checkTeam}}">
+          <view class="tui-picker-detail">{{checkTeam[selectIndex]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view>
+    <text class="weui-cell" space="ensp" style="border-top: 1rpx solid rgb(240, 240, 240);">评    委:</text>
+    <view class="input">{{master.username}}</view>
+  </view>
+  <view>
+    <view class="weui-cell" style="border-top: 1rpx solid rgb(240, 240, 240);">被评分人:</view>
+    <view>
+        <view class="input" wx:for="{{bescores}}">
+          <text>{{item.username}}</text>
+        </view>
+    </view>
+  </view> 
+  <view class="picker_1" style="border-top: 1rpx solid rgb(240, 240, 240);">
+    <view class="weui-cell">
+      <text class="weui-cell__hd"> 请选择评分模板： </text>
+      <view class="weui-cell__bd">
+        <picker bindchange="changeTemplate" value="{{selectIterm}}" range="{{selectIterm}}">
+          <view class="tui-picker-detail">{{selectIterm[selectIndex2]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <!-- 展示选的模板的内容 -->
+  <view>
+    <view class="input" wx:for="{{items}}">
+      <text space="ensp">  {{item}}</text>
+    </view>
+  </view>
+
+  <view>
+    <button class="button_1" bindtap="submit7">使用模板</button>
+  </view>
+</view>
+
+<!-- 修改模板 添加模板 修改组成员以及评分人 添加组别 -->
+<view class="select_template">编辑模板</view>
+  <view class="contain">
+  <view>
+    <view class="contain_1">增加模板</view>
+    <view style="margin-bottom: 40rpx;">
+      <view wx:for="{{list}}">
+        <input class="input" style="margin-left: 20rpx;" type="text"  placeholder="请输入模板项目" data-id="{{index}}" bindblur="input_itme"/>
+      </view>
+      <view class="icon_state">
+        <mp-icon wx:if="{{!tipe1}}" icon="add2" color="gray" size="{{25}}"  bindtap="add_template"></mp-icon>
+      </view> 
+      <view class="add_del"> 
+        <view class="weui-cell__bd" wx:if="{{tipe1}}" bindtap="add_list1">
+          <mp-icon icon="add" color="gray" size="{{25}}"></mp-icon>
+        </view>
+        <view class="weui-cell__bd" wx:if="{{tipe1}}" bindtap="del_list1">
+          <mp-icon icon="close" color="gray" size="{{25}}"></mp-icon>
+        </view>
+      </view>
+      <view wx:if="{{tipe1}}">
+        <button class="button_1" bindtap="submit">提交</button>
+      </view>
+    </view>
+  <!-- 对已经有的模板进行修改 -->
+    <view>
+      <view class="contain_1">设置模板</view>
+      <view class="icon_state">
+        <mp-icon wx:if="{{!tipe2}}" icon="setting" color="gray" size="{{25}}" bindtap="set_template"></mp-icon>
+      </view>  
+      <view class="weui-cell" wx:if="{{tipe2}}" >
+        <text class="weui-cell__hd"> 请选择修改的模板： </text>
+          <picker class="weui-cell__bd" bindchange="changeTemplate2" value="{{selectIterm2}}" range="{{selectIterm2}}">
+            <view class="tui-picker-detail">{{selectIterm2[selectIndex3]}}</view>       
+          </picker>
+      </view>
+      <view class="input" wx:if="{{tipe2}}" wx:for="{{items2}}" wx:for-index="index" data-index='{{bindex}}' wx:key="{{id}}">
+        <input type="text" placeholder="请输入模板项目" data-id="{{index}}" bindblur="input_itme2" value="{{items2[index]}}"/>
+      </view>
+      <view class="add_del">
+        <view class="weui-cell__bd" wx:if="{{tipe2}}" bindtap="add_list2">
+          <mp-icon icon="add" color="gray" size="{{25}}"></mp-icon>
+        </view>
+        <view class="weui-cell__bd" wx:if="{{tipe2}}" bindtap="del_list2">
+          <mp-icon icon="close" color="gray" size="{{25}}"></mp-icon>
+        </view>
+      </view>
+      <view class="button_2" wx:if="{{tipe2}}">
+        <button style="background-color: #06c05f; color: white;" bindtap="submit2">提交修改</button>
+      </view>
+      <view wx:if="{{tipe2}}">
+        <button class="button_1" bindtap="submit3">删除该模板</button>
+      </view>
+    </view>
+
+  </view>
+</view>
+<view>
+  <!--对组员的编辑-->
+  <view class="select_template">编辑组</view>
+  <view class="contain">
+    <view class="contain_1">新增团队</view>
+      <view class="weui-cell" wx:if="{{tipe3}}">
+        <view>添加队名</view>
+        <input style="margin-left: 20rpx;" type="text" bindblur="input_itme7" placeholder="请输入组名"/>
+      </view>
+    
+    <view class="icon_state" >
+      <mp-icon wx:if="{{!tipe3}}" icon="add-friends" color="gray" size="{{25}}" bindtap="add_team"></mp-icon>
+    </view>
+    <view class="weui-cell" wx:if="{{tipe3}}">
+      <view>添加组长</view>
+      <input style="margin-left: 20rpx;" type="text" bindinput="input_itme3" placeholder="请输入组长"/>
+    </view>
+    <!-- 当输入组长之后才输入组员，组长相当于直接是评委 -->
+    <view wx:if="{{input_master}}"> 
+    <view class="weui-cell">
+      <view class="weui-cell__hd">添加组员</view>
+    </view> 
+      <view wx:for="{{list2}}">
+        <input class="input" type="text"  placeholder="请输入组员" data-id="{{index}}" bindblur="input_itme4"/>
+      </view>
+      <view class="add_del" >
+        <view class="weui-cell__bd" wx:if="{{tipe3}}" bindtap="add_list3">
+          <mp-icon icon="add" color="gray" size="{{25}}"></mp-icon>
+        </view>
+        <view class="weui-cell__bd" wx:if="{{tipe3}}" bindtap="del_list3">
+          <mp-icon icon="close" color="gray" size="{{25}}"></mp-icon>
+        </view>
+      </view> 
+      <view wx:if="{{tipe3}}">
+        <button class="button_2" style="background-color: #06c05f; color: white;" bindtap="submit4">提交</button>
+      </view>
+    </view>
+  <!--设置和更新组员-->
+    <view class="contain_1">编辑团队成员</view>
+    <view>
+      <view class="icon_state">
+        <mp-icon wx:if="{{!tipe4}}" icon="setting" color="gray" size="{{25}}" bindtap="set_team"></mp-icon>
+      </view>  
+    </view>
+      <view class="weui-cell" wx:if="{{tipe4}}">
+        <text class="weui-cell__hd"> 请选择修改的模板： </text>
+        <picker bindchange="changeuserTeam2" value="{{checkTeam2}}" range="{{checkTeam2}}">
+        <view class="tui-picker-detail">{{checkTeam2[selectIndex4]}}</view>
+        </picker>
+      </view>
+      <!-- 使用master2做判断是因为tipe4不方便 -->
+      <view wx:if="{{master2}}" >  
+        <view class="weui-cell">组长 </view>
+        <input class="input" type="text" placeholder="请输入组长名字"  bindblur="input_itme6" value="{{master2}}"/>
+      </view>
+      <view class="weui-cell" wx:if="{{tipe4}}" >组员 </view>
+      <view wx:if="{{tipe4}}" wx:for="{{items3}}" wx:for-index="index" data-index='{{bindex}}' wx:key="{{id}}">
+        <input class="input" type="text"  placeholder="请输入组员名字" data-id="{{index}}" bindblur="input_itme5" value="{{items3[index]}}"/>
+      </view>
+      <view class="add_del">
+        <view class="weui-cell__bd" wx:if="{{tipe4}}" bindtap="add_list4">
+          <mp-icon icon="add" color="gray" size="{{25}}"></mp-icon>  
+        </view>
+        <view class="weui-cell__bd" wx:if="{{tipe4}}" bindtap="del_list4">
+          <mp-icon icon="close" color="gray" size="{{25}}"></mp-icon>
+        </view>
+      </view> 
+      <view wx:if="{{tipe4}}">
+        <button class="button_2" style="background-color: #06c05f; color: white;" bindtap="submit5">提交修改</button>
+      </view>
+      <view wx:if="{{tipe4}}">
+        <button class="button_1" bindtap="submit6">删除该组</button>
+      </view>
+  </view>
+</view>

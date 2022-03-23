@@ -1,20 +1,72 @@
 <!--pages/regist/regist.wxml-->
 <view class="registform">
-  <view class="head">
-    <text>个人信息补充</text>
-  </view>  
-  <form  bindsubmit="mysubmit">
-    <view class="search_row">
-      <input class="registinput" placeholder="请输入姓名" type="text" name="username"></input>
-    </view>
-    <view class="search_row">
-      <input class="registinput" placeholder="请输入电话号码" maxlength="11" type="text" name="phone"></input>
-    </view>
-    <view class="search_row">
-      <input class="registinput" placeholder="请输入邮箱账号" type="text" name="email"></input>
+
+  <view class="bt">个人信息</view>
+
+  <form bindsubmit="mysubmit">
+    <view class="form">
+      <view class="search_row">
+        <view class="image">
+          <image src="../../icon/shenfenxuanze.png" class="icon"></image>
+        </view>
+        <view class="pick" bindchange="changeuserType">
+          <picker bindchange="changeuserType" value="{{userTypeIndex}}" range="{{userTypeList}}">
+            <view class="tui-picker-detail">{{userTypeList[userTypeIndex]}}
+            </view>
+          </picker>
+            <view class="more">
+          <picker bindchange="changeuserType" value="{{userTypeIndex}}" range="{{userTypeList}}">
+              <mp-icon type="field" icon="more" color="gray" size="{{25}}"></mp-icon>
+          </picker>
+
+            </view>
+      
+        </view>
+      </view>
+      <view class='line'></view>
+      <view wx:if="{{passwordState}}">
+        <view class="search_row">
+          <view class="image">
+            <image src="../../icon/mima.png" class="icon"></image>
+          </view>
+          <view class="pick">
+            <input class="registinput" placeholder="请输入管理员密码" type="text" name="password"></input>
+          </view>
+        </view>
+        <view class='line'></view>
+      </view>
+      <view class="search_row">
+        <view class="image">
+          <image src="../../icon/zuoxixingming.png" class="icon"></image>
+        </view>
+        <view class="pick">
+          <input class="registinput" placeholder="请输入姓名" type="text" name="username"></input>
+        </view>
+      </view>
+      <view class='line'></view>
+      <view class="search_row">
+        <view class="image">
+          <image src="../../icon/24gl-telephone3.png" class="icon"></image>
+        </view>
+        <view class="pick">
+          <input class="registinput" placeholder="请输入电话号码" maxlength="11" type="text" name="phone"></input>
+        </view>
+      </view>
+      <view class='line'></view>
+      <view class="search_row">
+        <view class="image">
+          <image src="../../icon/tubiao_youxiang.png" class="icon"></image>
+        </view>
+        <view class="pick">
+          <input class="registinput" placeholder="请输入邮箱账号" type="text" name="email"></input>
+        </view>
+      </view>
+
+
     </view>
     <view>
-      <button class="regist_button" form-type="submit" >提交</button>
+      <button class="regist_button" form-type="submit">提交</button>
     </view>
   </form>
+
 </view>

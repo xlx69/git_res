@@ -1,0 +1,13 @@
+<!--个人详细的评分的展示-->
+<view class="abab">
+  <view wx:for="{{userinfo}}" wx:for-index="bindex" data-index='{{bindex}}' wx:key="{{id}}" bindtap="detail" >
+    <view class="see_theme2">
+      <view class="see_theme2_item1">评委：</view>
+      <view class="see_theme2_item2">{{item.username}}</view>
+      <view class="see_theme2_item3">分值：{{item.score}}</view>
+    </view>
+    <view class="see_theme3" wx:if="{{item.remark != 0}}">评论：{{item.remark}}</view>
+    <view class="see_theme3" wx:if="{{item.remark == 0}}">评论：无</view>
+
+  </view>
+</view>

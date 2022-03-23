@@ -1,0 +1,46 @@
+page {
+  height: 100%;
+  background: rgb(237, 237, 237);
+}
+.picker_1{
+  display: flex;
+}
+.select_template{
+  color: rgb(7, 193, 96);
+  font-size:smaller;
+  font-weight: bold;
+  margin: 20rpx;
+}
+.contain{
+  margin: 20rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3%;
+}
+.contain_1{
+  display: flex;
+  font-weight:600;
+  color: #7d7c7cf5; 
+  margin: 10rpx 0 0 20rpx;
+}
+.button_1{
+  margin: 20rpx 0;
+  background-color: #06c05f; 
+  color: white;
+}
+.button_2{
+  margin-top:20rpx ;
+}
+.icon_state{
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.input{
+  text-align: center;
+  margin: 5rpx 0;
+}
+.add_del{
+  display: flex;
+  text-align: center;
+}

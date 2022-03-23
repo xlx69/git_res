@@ -1,0 +1,113 @@
+page {
+  height: 100%;
+  background: rgb(237, 237, 237);
+}
+
+.scorepage {
+  height: auto;
+  background: white;
+  margin: 10rpx 15rpx;
+  border-radius: 10rpx;
+}
+
+.score {
+  display: flex;
+  border-top: 1rpx solid rgb(243, 243, 243);
+  width: 100%;
+  align-items: center;
+  border-radius: 10rpx;
+padding-left: 30rpx;
+}
+
+.scoreItem {
+  width: 40%;
+  text-align: left;
+}
+
+.scoreSlide {
+  width: 40%;
+}
+
+.textarea-wrp {
+
+  background-color: #fff;
+  height: 280rpx;
+  margin: 10rpx 15rpx;
+  border-radius: 10rpx;
+  height: 100%;
+}
+
+.remake {
+  /* background-color: rgb(189, 96, 96); */
+  width: 650rpx;
+  height: 100%;
+  font-size: 30rpx;
+  /* padding-top: 20rpx; */
+  padding-left: 40rpx;
+  padding-right: auto;
+}
+
+  
+
+.score_test {
+  color: rgb(7, 193, 96);
+  font-size:smaller;
+  font-weight: bold;
+  margin: 20rpx;
+}
+.chagesize{
+  transform: scale(0.7,0.7);
+margin-bottom: 2rpx;
+}
+.text{
+  /* background-color: aqua; */
+  font-size: 35rpx;
+padding-top: 2rpx;
+color: rgb(117, 115, 115);
+
+}
+.anonymous {
+  display: flex;
+  /* margin: 10rpx 15rpx; */
+  background-color: #fff;
+  border-radius: 10rpx;
+  float: right;
+}
+.scoreButton{
+  margin-top: 300rpx;
+}
+.ra{
+  margin: 0 20rpx;
+}
+.score_checked{
+  font-size:smaller;
+  text-align: right;
+  font-weight: bold;
+  margin-right: 30rpx;
+  padding: 20rpx 0;
+  color:rgb(190, 190, 190);
+}
+radio .wx-radio-input {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+}
+radio .wx-radio-input.wx-radio-input-checked {
+   /* 背景颜色 */
+  background-color: #fff!important; 
+  /* 边框颜色 */
+  border-color: #00b26a!important;
+}
+ 
+/* 选中后的实心样式*/
+radio .wx-radio-input.wx-radio-input-checked::before {
+ /* 将对号去掉 */
+ content: ''; 
+ /*实心圆圈的大小*/
+ width: 18rpx;
+ height: 18rpx;
+ /*将圆角设置成50%才是一个圆*/
+ border-radius: 50%;
+ /*圆圈颜色*/
+ background-color: #00b26a;
+}

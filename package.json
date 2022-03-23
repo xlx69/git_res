@@ -1,0 +1,17 @@
+{
+  "name": "pingfen2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "weui-miniprogram": "^1.1.0"
+  }
+}

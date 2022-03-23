@@ -1,0 +1,79 @@
+page {
+  background-color: #f0f0f4;
+}
+.see_theme{
+  text-align: center;
+}
+.see_theme2{
+  display: flex;
+  padding: 16px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  align-items: center;
+  background-color: #fff;
+  /* margin-bottom: 20rpx; */
+}
+.see_theme2_item1-1{
+  margin-left: 20rpx;
+}
+.see_theme2_item1{
+  width: 30%;
+}
+/* .see_theme2_item2{
+  width: 40%;
+} */
+.see_theme2_item2 {
+  padding-left: 130rpx;
+  width: 30%;
+}
+.see_theme2_item2-1 {
+  padding-left: 150rpx;
+  width: 30%;
+}
+.see_theme2_item3{
+  width: 15%;
+}
+.see_theme2_item4{
+  width: 20%;
+}
+.see_theme3{
+  display: flex;
+  text-align: center;
+  background-color: white;
+  align-items: center;
+}
+.see_theme3_item1{
+  width: 50%;
+}
+.see_theme3_item2{
+  width: 50%;
+}
+.see_theme3_item3{
+  text-align: center;
+  font-display: center;
+  color: gray;
+}
+.divLine{
+  background: #E0E3DA;
+  width: 100%;
+  height: 3rpx;
+  margin-left: 50rpx;
+ }
+.abab{
+  margin-top: 20rpx; 
+}
+.right_arrow{
+  border: solid #948f8f;
+  border-width: 0 3px 3px 0;
+  padding: 3px;
+  position: absolute; /*这个可以百度一下*/
+  right: 15px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.paiming {
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;
+}

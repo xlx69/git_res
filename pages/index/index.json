@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "mp-searchbar": "weui-miniprogram/searchbar/searchbar",
+    "mp-slideview": "weui-miniprogram/slideview/slideview",
+    "mp-icon": "weui-miniprogram/icon/icon"
+  }
 }

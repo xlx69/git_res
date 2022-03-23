@@ -1,0 +1,22 @@
+<!--pages/myRelease/myRelease.wxml-->
+<mp-searchbar class="seachBar" id="searchbar" bindselectresult="selectResult" search="{{search}}" value="{{inputVal}}">
+</mp-searchbar>
+<view data-weui-theme="dark">
+  <mp-slideview class="search_item" buttons="{{slideButtons}}" bindbuttontap="del" wx:for="{{themeList}}"  
+    wx:for-index="bindex" data-index='{{bindex}}' wx:key="{{id}}">
+    <mp-cell class="index_item">
+      <view class="search_item2" slot="number">{{bindex+1}}.</view>
+      <view class="search_item3" slot="number">{{item.scoreTheme}}</view>
+    </mp-cell>
+    <view class="index_time">
+      <view class="countdown" >
+        <view class="item">
+          发布时间:
+        </view>
+        <view class="item_1">
+          <view class="txt-time">{{item.createTime}}</view>
+        </view>
+      </view>
+    </view>
+  </mp-slideview>
+</view>

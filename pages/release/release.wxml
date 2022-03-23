@@ -1,0 +1,152 @@
+<view class="bt">基本信息</view>
+<view class="contain">
+  <view class="weui-cell">
+    <view class="weui-cell__hd"><label class="weui-label">评分主题</label></view>
+    <view class="weui-cell__bd">
+      <input bindinput="setTitle" value="{{title}}" class="weui-input" type="text" placeholder="请填写评分主题" />
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__hd"><label class="weui-label">评分开始时间</label></view>
+    <!--选择评分开始时间-->
+    <view class="selectTime">
+      <pickerYMDHM placeholder="{{date1}}" disabled="{{disabled}}" bind:onPickerChange="onPickerChange" startDate="{{startDate}}" endDate="{{endDate}}" value="{{currentDate}}" bindchange="bindDateChange"></pickerYMDHM>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__hd"><label class="weui-label">评分结束时间</label></view>
+    <!-- 选择评分截至时间 -->
+    <view class="selectTime">
+      <pickerYMDHM placeholder="{{date2}}" disabled="{{disabled}}" bind:onPickerChange="onPickerChange2" startDate="{{startDate}}" endDate="{{endDate}}" value="{{currentDate}}" bindchange="bindDateChange">
+      </pickerYMDHM>
+    </view>
+  </view>
+</view>
+
+<view class="bt">评分细则</view>
+<view class="contain">
+  <view style="text-align: center;">
+    <view wx:if="{{rules.length==0}}">
+      <text style="color: grey; opacity: 0.8;">暂无评分细则</text>
+      <!-- <button bindtap="Import_template" style="background-color: #fff; font-weight: 350; text-align: right; width: 600rpx; margin: 0; padding: 25rpx 0;color: gray;">导入模板</button> -->
+    </view>
+  </view>
+  <!-- 添加评分细则 记录在rules中 -->
+  <view wx:key="*this" class="sliderview" wx:for="{{rules}}" wx:for-index="bindex" data-index='{{bindex}}'>
+    <mp-slideview buttons="{{slideButtons}}" icon="{{true}}" bindbuttontap="slideButtonTap" data-index='{{bindex}}'>
+      <picker data-index='{{bindex}}' bindchange="bindPickerChange" value="{{value}}" range="{{array}}">
+        <view class="itemText">
+          {{bindex+1}}、评分项：{{item}}
+          <view class="itemText-chi">权重:{{rulesWeight[bindex]}}</view>
+        </view>
+      </picker>
+    </mp-slideview>
+    <view class="divLine"></view>
+  </view>
+  <view class="weui-cell">
+    <image bindtap='addRule' src="/icon/add.png" style="width:50rpx; height: 50rpx; margin: 0 auto;"></image>
+  </view>
+</view>
+
+<!-- 记录在userType-->
+<view class="bt">评委</view>
+<view class="contain">
+  <view style="text-align: center;">
+    <text wx:if="{{userType.length==0}}" style="color: grey;opacity: 0.8;">暂无评委用户</text>
+  </view>
+  <view class="weui-cell" style="flex-direction: column;">
+    <view bindtap="navigat" wx:for="{{userType}}" data-index='{{bindex}}' wx:for-index="bindex" class="weui-cell weui-cell_access" style="width: 100%;">
+      <view class="weui-cell__bd">{{item}}</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+        <view style="display: inline-block;vertical-align:middle; font-size: 17px;">详情</view>
+      </view>
+    </view>
+    <image bindtap="adduser" src="/icon/add-friends.png" style="width:50rpx; height: 50rpx; margin: 0 auto;"></image>
+  </view>
+</view>
+<!-- 数据记录在bescoreType中 -->
+<view class="bt">评分对象</view>
+<view class="contain">
+  <view style="text-align: center;">
+    <text wx:if="{{bescoreType.length==0}}" style="color: grey;opacity: 0.8;">暂无评分对象</text>
+  </view>
+  <view class="weui-cell" style="flex-direction: column;">
+    <view bindtap="navigat2" wx:for="{{bescoreType}}" data-index='{{bindex}}' wx:for-index="bindex" class="weui-cell weui-cell_access" style="width: 100%;">
+      <view class="weui-cell__bd">{{item}}</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+        <view style="display: inline-block;vertical-align:middle; font-size: 17px;">详情</view>
+      </view>
+    </view>
+    <image bindtap="addbescore" src="/icon/add-friends.png" style="width:50rpx; height: 50rpx; margin: 0 auto;"></image>
+  </view>
+</view>
+
+<view>
+  <checkbox-group bindchange="checkboxChange3">
+    <view class="bt">
+      按等级评分
+      <checkbox checked="{{check_btn}}" class="wx-checkbox-input" value="1" />
+    </view>
+      <view class="contain" wx:if="{{check_btn}}">
+        <view style="text-align: center;margin:15rpx 0">
+          <picker bindchange="bindPickerChange_A" value="{{value}}" range="{{array}}">
+          <text style="color: grey;opacity: 0.8;">请选择评为A的人数：{{array[index]}}</text>
+          </picker>
+        </view>
+      </view>
+  </checkbox-group>
+</view>
+
+<button type="primary" bindtap="submit" style="margin-top: 20px;">提交</button>
+
+
+<!--评分细则弹窗模块-->
+<!-- 遮罩层 -->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">输入评分细则</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="text" maxlength="10" bindinput="inputChangename" class="input" value="{{stuName}}"></input>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancelname" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirmname" data-status="confirm">确定</view>
+  </view>
+</view>
+<!-- 评委用户弹窗模块 -->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{userModel}}"></view>
+<view class="modal-dialog" wx:if="{{userModel}}" style="top: 40%;">
+  <view class="modal-title" style="font-size: medium;">请选择用户类型</view>
+  <view class="modal-content" style="padding: 0rpx 32rpx;">
+    <mp-cells>
+      <mp-checkbox-group prop="checkbox" multi="{{true}}" bindchange="checkboxChange">
+        <mp-checkbox style="font-size: small;" wx:for="{{checkboxItems}}" wx:key="value" label="{{item.value}}" value="{{item.value}}" checked="{{item.checked}}"></mp-checkbox>
+      </mp-checkbox-group>
+    </mp-cells>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="cancle" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="confirm" data-status="confirm">确定</view>
+  </view>
+
+</view>
+
+<!-- 评分用户弹窗模块 -->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showbescoreModel}}"></view>
+<view class="modal-dialog" wx:if="{{showbescoreModel}}" style="top: 40%;">
+  <view class="modal-title" style="font-size: medium;">请选择用户类型</view>
+  <view class="modal-content" style="padding: 0rpx 32rpx;">
+    <mp-cells>
+      <mp-checkbox-group prop="checkbox" multi="{{true}}" bindchange="checkboxChange2">
+        <mp-checkbox style="font-size: small;" wx:for="{{checkboxItems2}}" wx:key="value" label="{{item.value}}" value="{{item.value}}" checked="{{item.checked}}"></mp-checkbox>
+      </mp-checkbox-group>
+    </mp-cells>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="cancle2" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="confirm2" data-status="confirm">确定</view>
+  </view>
+
+</view>

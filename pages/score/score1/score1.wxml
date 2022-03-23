@@ -1,0 +1,44 @@
+<!--评分页-->
+<view>
+  <view class="score_test">评分区</view>
+  <view class="scorepage">
+    <view wx:for="{{scoreItem}}" wx:for-index="bindex" data-index='{{bindex}}' wx:key="{{id}}">
+      <view class="score">
+        <view class="scoreItem">{{item.quota}}</view>
+        <slider class="scoreSlide" max="{{5*item.weight}}" min="0.0" value="0.0" show-value="true" bindchange="scoreItem" data-index="{{bindex}}" block-size="15"></slider>
+      </view>
+
+    </view>
+
+
+  </view>
+  <view class="score_test" wx:if="{{check_btn=='True'}}">综合评分区:</view>
+  <view class="scorepage" wx:if="{{check_btn=='True'}}">
+    <view class="score_checked">
+      <view style="float: left;">
+        <radio-group bindchange="bandleChange">
+          <radio color="#07c160" value="A" class="ra">A</radio>
+          <radio color="#07c160" value="B" class="ra">B</radio>
+          <radio color="#07c160" value="C" class="ra">C</radio>
+          <radio color="#07c160" value="D" class="ra">D</radio>
+        </radio-group>
+      </view>
+      剩余评A的人数:{{check_num}}
+    </view>
+  </view>
+
+  <text wx:if="{{check_btn == 'True'}}" style="float: right; font-size: 26rpx; margin-right: 20rpx; margin-bottom: 20rpx; color: rgb(7, 193, 96);" bindtap="hint" >评级细则</text>
+
+  <view class="score_test" style="padding-top:20rpx;">评论区</view>
+  <view class="textarea-wrp">
+    <view class="anonymous">
+      <checkbox-group bindchange="checkboxChange">
+        <checkbox value="true" checked="{{check}}" class="chagesize">
+          <view class="text">匿名评论</view>
+        </checkbox>
+      </checkbox-group>
+    </view>
+    <textarea class="remake" bindblur="bindTextAreaBlur" placeholder="请输入评论（可为空）" auto-focus="true" style="height: 9em" />
+  </view>
+</view>
+<button class="scoreButton" type="primary" bindtap="scoreSubmit">提交</button>

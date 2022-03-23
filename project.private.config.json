@@ -65,6 +65,42 @@
           "pathName": "pages/upGrade/upGrade",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/pulldown/pulldown",
+          "pathName": "pages/pulldown/pulldown",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index2/index2",
+          "pathName": "pages/index2/index2",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/see/see1/see1",
+          "pathName": "pages/see/see1/see1",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/score/score1/score1",
+          "pathName": "pages/score/score1/score1",
+          "query": "username=%E7%8E%8B%E4%BA%94&user_id=3",
+          "scene": null
+        },
+        {
+          "name": "pages/see/see1/see1",
+          "pathName": "pages/see/see1/see1",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/release/release",
+          "pathName": "pages/release/release",
+          "query": "",
+          "scene": null
         }
       ]
     }

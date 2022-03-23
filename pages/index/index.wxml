@@ -1,8 +1,60 @@
-<view class="index">当前周期评分排名</view>
-<view class="search_content" >
-  <view class="search_item" style="white-space: nowrap" wx:for="{{userinfo}}" wx:for-index="bindex" data-index='{{bindex}}' wx:key="{{id}}" bindtap="detail">
-    <view  class="search_item2" >{{bindex+1}}.</view>
-    <view  class="search_item3" >{{item.username}}</view>
-    <view  class="search_item4" >{{item.score}}分</view>
-  </view>
+<!-- 首页 -->
+<!--如果不再名单内的话也不能评分，在前端提示  还未做，需要在后端做判断。-->
+<!--在评分项加一个判断，如果过期了就不可评分了，直接使用她的describe的值做判断。-->
+<mp-searchbar class="seachBar" id="searchbar" bindselectresult="selectResult" search="{{search}}" value="{{inputVal}}">
+</mp-searchbar>
+
+<view data-weui-theme="dark">
+  <mp-slideview class="search_item" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap" wx:for="{{themeList0}}"  
+    wx:for-index="bindex" data-index='{{bindex}}' wx:key="{{id}}">
+    <mp-cell class="index_item">
+      <view class="search_item3" slot="number">{{item.scoreTheme}}</view>
+    </mp-cell>
+    <view class="index_time">
+      <view class="countdown" >
+        <view class="item">
+          剩余评分时间:
+        </view>
+        <view class="item_1">
+          <view class="txt-time">{{item.day}}</view>天
+          <view class="txt-time">{{item.hou}}</view>时
+          <view class="txt-time">{{item.min}}</view>分
+        </view>
+      </view>
+    </view>
+    <!-- <view class="divLine"></view> -->
+  </mp-slideview>
+  
+  <mp-slideview class="search_item_1" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap2" wx:for="{{themeList_1}}" 
+    wx:for-index="bindex" data-index='{{bindex}}' wx:key="{{id}}">
+    <mp-cell class="index_item_1">
+      <!-- <view class="search_item5" slot="number">{{bindex+1}}.</view> -->
+      <view class="search_item6_1" slot="number">{{item.scoreTheme}}</view>
+    </mp-cell>
+    <view class="index_time">
+      <view class="countdown" >
+        <view class="item1_1">
+        评分尚未开始
+        </view>
+      </view>
+    </view>
+  </mp-slideview>
+
+  <mp-slideview class="search_item_2" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap3" wx:for="{{themeList1}}" 
+    wx:for-index="bindex" data-index='{{bindex}}' wx:key="{{id}}">
+    <mp-cell class="index_item_2">
+      <!-- <view class="search_item5" slot="number">{{bindex+1}}.</view> -->
+      <view class="search_item6" slot="number">{{item.scoreTheme}}</view>
+    </mp-cell>
+    <view class="index_time">
+      <view class="countdown" >
+        <view class="item1">
+        评分已截至
+        </view>
+      </view>
+    </view>
+  </mp-slideview>
 </view>
+
+
+<!-- 后的面js 文件里面也有改了内容 -->

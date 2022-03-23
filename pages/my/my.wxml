@@ -1,26 +1,59 @@
 <view class="header">
-  <button class="anniu" wx:if="{{!userInfo}}" bindtap="login" >请登录</button>
+  <button class="anniu" wx:if="{{!userInfo}}" bindtap="login">请登录</button>
   <view wx:else class="root">
-    <image class="touxiang" src="{{userInfo.avatarUrl}}"></image>
-    <text class="necheng">{{userInfo.nickName}}</text>
-    <button class="anniu2" bindtap="loginOut">退出登录</button>
+    <view class="img">
+      <image class="touxiang" src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="text">
+      <text class="necheng">{{userInfo.nickName}}</text>
+      <button class="anniu2" bindtap="loginOut">退出登录</button>
+    </view>
   </view>
 </view>
-<view wx:if="{{userInfo}}">
-  <view class="item" bindtap="grade">
-    <text >我的等级</text>
-    <text class="right_arrow" ></text>
+<view wx:if="{{userInfo}}" class="bc">
+  <view class="item2" bindtap="release" wx:if="{{grade == '管理员'}}">
+    <image class="item-image" src="../../icon/release2.png"></image>
+    <text>发起评分</text>
+    <text class="right_arrow"></text>
+    <view class="border-bottom"></view>
   </view>
-  <view class="item" bindtap="score">
-    <text >我的分数</text>
-    <text  class="right_arrow"></text>
+
+  <view class="item1" bindtap="template" wx:if="{{grade == '管理员'}}">
+    <image class="item-image" src="../../icon/muban.png"></image>
+    <text>导入模板</text>
+    <text class="right_arrow"></text>
+    <view class="border-bottom"></view>
   </view>
-  <view class="item"> 
-    <navigator url="../upGrade/upGrade">升级权限</navigator>
-    <navigator url="../upGrade/upGrade" class="right_arrow"></navigator>
+
+  <view class="item1" bindtap="myRelease" wx:if="{{grade == '管理员'}}">
+    <image class="item-image" src="../../icon/yifabuzhiwei.png"></image>
+    <text>我的发布</text>
+    <text class="right_arrow"></text>
+    <view class="border-bottom"></view>
   </view>
-  <view class="item"> 
-    <navigator url="../regist/regist">个人信息补充</navigator>
-    <navigator url="../regist/regist" class="right_arrow"></navigator>
+
+
+  <view class="item1" bindtap="manage" wx:if="{{grade == '管理员'}}">
+    <image class="item-image" src="../../icon/lianxi.png"></image>
+    <text>群成员管理</text>
+    <text class="right_arrow"></text>
+  </view>
+
+  <!-- 所有人都可以看到 -->
+  <view class="item2" bindtap="updateInfomation">
+    <image class="item-image" src="../../icon/exe-marking-primary.png"></image>
+    <text>修改个人信息</text>
+    <text class="right_arrow"></text>
+    <view class="border-bottom"></view>
+  </view>
+  <view class="item1" bindtap="Subscribe" wx:if="{{grade == '管理员'}}">
+    <image class="item-image" src="../../icon/lianxi.png"></image>
+    <text>获取订阅</text>
+    <text class="right_arrow"></text>
+  </view>
+  <view class="item2">
+    <image class="item-image" src="../../icon/a-lianxiren2x.png"></image>
+    <button open-type="contact" style="background-color: #fff; font-weight: 350; text-align: left; width: 600rpx; margin: 0; padding: 25rpx 0;">联系管理员</button>
+    <text class="right_arrow"></text>
   </view>
 </view>

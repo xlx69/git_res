@@ -1,0 +1,23 @@
+<view class="bt">评委</view>
+<!-- 这里应该吧对象或者评委的词传过来直接当抬头 -->
+<view class="contain">
+  <div class="user" ><label
+      class="weui-label" style="font-weight:600;">{{usertype}}</label>
+    <div style="display: flex; float: right;">
+      <!-- 数字选择框1 -->
+      <picker wx:if="{{showModal}}" bindchange="bindPickerChange" value="{{value}}" range="{{array}}">
+        <view style="text-align: right; width: 440rpx; color: grey; font-size: 28rpx;">
+          {{choseQuestionBank}}
+        </view>
+      </picker>
+    </div>
+  </div>
+  <!-- 用户复选框 -->
+  <mp-cells >
+    <mp-checkbox-group prop="checkbox" multi="{{true}}" bindchange="checkboxChange">
+      <mp-checkbox wx:for="{{checkboxItems}}" wx:key="value" label="{{item.value}}" value="{{item.user_id}}"
+        checked="{{item.checked}}"></mp-checkbox>
+    </mp-checkbox-group>
+  </mp-cells>
+</view>
+<button type="primary" bindtap="modalcnt" style="margin: 30rpx auto;">确定</button>
